@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clear-build": "rm -rf dist",
     "webpack": "./node_modules/.bin/webpack",
-    "build-prod": "webpack --mode=production",
-    "build-dev": "webpack --mode=development",
+    "build-prod": "npm run clear-build && webpack --mode=production",
+    "build-dev": "npm run clear-build && webpack --mode=development",
     "open-server": "webpack-dev-server"
   },
   "keywords": [],

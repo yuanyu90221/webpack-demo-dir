@@ -3,8 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 let config = {
   // package entry point
   entry: {
-    index: './src/index.js',
-    another: './src/another-module.js'
+    index: './src/index.js'
   },
   output: {
     // final packaged name
@@ -19,7 +18,8 @@ let config = {
       title: 'My App',
       meta: {
         'theme-color': '#4285f4'
-      }
+      },
+      favicon: `${path.join(__dirname,'assets','icon-square-big.png')}`
     })
   ], //devServer Setup
   devServer: {
