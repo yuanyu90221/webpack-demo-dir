@@ -11,6 +11,15 @@ let config = {
     // final package path
     path: path.resolve(__dirname,'dist')
   },
+  module: {
+    rules: [
+      {
+        use:['style-loader', 'css-loader'],
+        test: /\.css$/,
+        include: `${path.resolve(__dirname,'css')}`
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: `${path.join(__dirname,'dist','index.html')}`,
