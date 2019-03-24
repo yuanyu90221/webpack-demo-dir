@@ -22,6 +22,7 @@ let config = {
 }
 module.exports = (env, argv) =>{
   // 根據 是否有 --mode=production來判別是否要compile成 production
+  // https://webpack.js.org/concepts/mode/#usage
   if (argv.mode && (argv.mode === 'production' || argv.mode === 'development' )) {
     config.mode = argv.mode;
   } else {
