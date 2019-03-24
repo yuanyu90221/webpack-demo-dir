@@ -3,9 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 let config = {
   // package entry point
-  entry: {
-    index: './src/index.js'
-  },
+  entry: [
+    './src/index.js', './src/app.jsx'
+  ],
   output: {
     // final packaged name
     filename: '[name].bundle.js',
@@ -22,6 +22,26 @@ let config = {
           "css-loader"
         ],
         test: /\.css$/
+      },
+      {
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-react','@babel/preset-env']
+          }
+        },
+        test: /.jsx$/
+      },
+      {
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        },
+        test: /.js$/
       }
     ]
   },

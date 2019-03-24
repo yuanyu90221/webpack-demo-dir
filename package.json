@@ -14,6 +14,10 @@
   "author": "json",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.5.0",
@@ -23,6 +27,8 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   }
 }
