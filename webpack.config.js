@@ -3,13 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 let config = {
   // package entry point
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
+    another: './src/another-module.js'
   },
   output: {
     // final packaged name
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     // final package path
-    path: path.resolve('./dist/')
+    path: path.resolve(__dirname,'dist')
   },
   plugins: [
     new HtmlWebpackPlugin({
