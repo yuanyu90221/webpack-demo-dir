@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 let config = {
   // package entry point
   entry: {
@@ -14,7 +15,12 @@ let config = {
   module: {
     rules: [
       {
-        use:['style-loader', 'css-loader'],
+        use: [
+          {
+              loader: MiniCssExtractPlugin.loader
+          },
+          "css-loader"
+        ],
         test: /\.css$/
       }
     ]
@@ -28,6 +34,10 @@ let config = {
         'theme-color': '#4285f4'
       },
       favicon: `${path.join(__dirname,'assets','icon-square-big.png')}`
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
     })
   ], //devServer Setup
   devServer: {
