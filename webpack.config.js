@@ -13,12 +13,17 @@ let config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      entry: './src/index.html',
       filename: `${path.join(__dirname,'dist','index.html')}`,
       template: './src/index.html',
-      title: 'My App'
+      title: 'My App',
+      meta: {
+        'theme-color': '#4285f4'
+      }
     })
-  ]
+  ], //devServer Setup
+  devServer: {
+    port: 9000
+  }
 }
 module.exports = (env, argv) =>{
   // 根據 是否有 --mode=production來判別是否要compile成 production
@@ -29,10 +34,10 @@ module.exports = (env, argv) =>{
     config.mode = 'development';
   }
   // 設定是否有 source map https://webpack.docschina.org/configuration/devtool/
-  if (config.mode==='development') {
+  if (config.mode=='development') {
     config.devtool = 'source-map';
   } else { 
-    config.devtool = 'nosources-source-map';
+    config.devtool = 'none';
   }
   return config;
 };
