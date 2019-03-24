@@ -3,9 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 let config = {
   // package entry point
-  entry: [
-    './src/index.js', './src/app.jsx'
-  ],
+  entry: {
+    index:'./src/index.js', 
+    app:'./src/app.jsx'
+  },
   output: {
     // final packaged name
     filename: '[name].bundle.js',
