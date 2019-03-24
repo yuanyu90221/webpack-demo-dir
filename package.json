@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "webpack": "./node_modules/.bin/webpack",
-    "build-prod": "npm run webpack --mode=production",
-    "build-dev": "npm run webpack --mode=dev"
+    "build-prod": "webpack --mode=production",
+    "build-dev": "webpack --mode=development"
   },
   "keywords": [],
   "author": "json",
