@@ -15,8 +15,7 @@ let config = {
     rules: [
       {
         use:['style-loader', 'css-loader'],
-        test: /\.css$/,
-        include: `${path.resolve(__dirname,'css')}`
+        test: /\.css$/
       }
     ]
   },
